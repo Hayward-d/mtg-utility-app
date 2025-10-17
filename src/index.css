@@ -1,13 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ---- Card Styles ---- */
+.card {
+  @apply bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl shadow-xl p-5 flex flex-col items-center text-center;
+}
+
+.card-title {
+  @apply text-2xl font-semibold mb-3;
+}
+
+.result-text {
+  @apply mt-3 text-2xl font-semibold text-slate-200;
+}
+
+/* ---- Button Presets ---- */
+.btn-indigo {
+  @apply bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-xl text-white font-medium transition shadow;
+}
+
+.btn-yellow {
+  @apply bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-xl shadow transition;
+}
+
+.btn-small {
+  @apply bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded-lg text-white transition;
+}
+
+.btn-red {
+  @apply bg-red-600 hover:bg-red-500 px-8 py-3 rounded-2xl text-lg font-semibold shadow-md transition;
+}
+
+/* Make buttons feel responsive and tactile */
+button:active {
+  transform: scale(0.95);
+  transition: transform 0.05s;
+}
+
+/* Prevent text selection for smoother mobile tapping */
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+img {
+  pointer-events: none; /* clicking goes to buttons only */
 }
